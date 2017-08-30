@@ -33,21 +33,21 @@ function renderList(posts){
 }
 
 
-    function getPosts(){
-        return [
-            {
-                "href": "../posts/dell_review",
-                "title": "Two days into the red GTR and I'm lovin' it.",
-                "subtitle": "My first impressions on Dell's budget gaming laptop - Inspiron 15 (7567)",
-                "date": "April 12,2017", 
-            },
-            {
-                "href": "../posts/first_post",
-                "title": "First Post",
-                "subtitle": ":D",
-                "date": "April 2, 2017",
-            }
-        ];
-    }
+function getPosts(){
+    return [
+        {
+            "href": "../posts/dell_review",
+            "title": "Two days into the red GTR and I'm lovin' it.",
+            "subtitle": "My first impressions on Dell's budget gaming laptop - Inspiron 15 (7567)",
+            "date": "Posted on April 12,2017", 
+        },
+        {
+            "href": "../posts/first_post",
+            "title": "First Post",
+            "subtitle": ":D",
+            "date": "Posted on April 2, 2017",
+        }
+    ];
+}
 
-    renderList(getPosts());
+renderList(getPosts());
