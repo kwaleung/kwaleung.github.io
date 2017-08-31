@@ -1,6 +1,6 @@
 //Javascript for dynamic page arrangement
 
-function renderList(posts){
+function renderList(posts, postcount){
 
     var ListDiv = document.getElementById("post-preview-list");
 
@@ -44,10 +44,14 @@ function getPosts(){
         {
             "href": "../posts/first_post",
             "title": "First Post",
-            "subtitle": ":D",
+            "subtitle": "It all begins here.",
             "date": "Posted on April 2, 2017",
         }
     ];
 }
 
-renderList(getPosts());
+function totalposts(posts){
+
+    return posts.length;
+
+}

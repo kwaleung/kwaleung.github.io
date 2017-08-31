@@ -22,6 +22,9 @@
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
+    <!-- My JS -->
+    <script src="page/Pager.js"></script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -31,7 +34,7 @@
 	<link rel="shortcut icon" href="img/web-icon.ico" />
 </head>
 
-<body>
+<body onload="renderList(getPosts(), totalposts(getPosts()));">
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -86,35 +89,14 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" style="background:rgba(255,255,255,0.8);">
-					<div class="post-preview">
-						<a href="posts/dell_review">
-							<h2 class="post-title">
-								Two days into the red GTR and I'm lovin' it.
-							</h2>
-							<h3 class="post-subtitle">
-								My first impressions on Dell's budget gaming laptop
-							</h3>
-						</a>
-						<p class="post-meta">Posted on April 12, 2017</p>
-					</div>
-					<div class="post-preview">
-						<a href="posts/first_post">
-							<h2 class="post-title">
-								The Beginning
-							</h2>
-							<h3 class="post-subtitle">
-								:D
-							</h3>
-						</a>
-						<p class="post-meta">Posted on April 2, 2017</p>
-					</div>
+                    <div id=post-preview-list></div>
 					<hr>
 					<!-- Pager -->
-					<!-- <ul class="pager">
+					<ul class="pager">
 						<li class="next">
-							<a href="post_list.html">Older Posts &rarr;</a>
+							<a href="page/Previous_Posts.html">Older Posts &rarr;</a>
 						</li>
-					</ul> -->
+					</ul>
 				</div>
 			</div>
 		</div>
