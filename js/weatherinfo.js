@@ -8,7 +8,7 @@ var _currenttemp = "temp";
 
 function getCurrentWeather(){
 
-    var locationinfo = retrieveJSON();
+    var locationinfo = retrieveIPlocation();
 
     _currentLat = locationinfo.latitude;
     _currentLong = locationinfo.longitude;
