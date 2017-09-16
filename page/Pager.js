@@ -3,6 +3,7 @@
 function renderList(posts, postcount){
 
     var ListDiv = document.getElementById("post-preview-list");
+    
     //DOM structure
     posts.forEach(function(post){
 
@@ -33,7 +34,7 @@ function renderList(posts, postcount){
 
 
 function getPosts(){
-    return [
+    var postsdb = [
         {
             "href": "#",
             "title": "This is a fake post :0)",
@@ -53,6 +54,7 @@ function getPosts(){
             "date": "Posted on April 2, 2017",
         }
     ];
+    return postsdb;
 }
 
 function totalposts(posts){
