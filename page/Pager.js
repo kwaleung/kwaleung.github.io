@@ -3,7 +3,6 @@
 function renderList(posts, postcount){
 
     var ListDiv = document.getElementById("post-preview-list");
-
     //DOM structure
     posts.forEach(function(post){
 
@@ -36,6 +35,12 @@ function renderList(posts, postcount){
 function getPosts(){
     return [
         {
+            "href": "#",
+            "title": "This is a fake post :0)",
+            "subtitle": ":0)",
+            "date": "Nebula", 
+        },
+        {
             "href": "../posts/dell_review",
             "title": "Two days into the red GTR and I'm lovin' it.",
             "subtitle": "My first impressions on Dell's budget gaming laptop - Inspiron 15 (7567)",
@@ -53,5 +58,31 @@ function getPosts(){
 function totalposts(posts){
 
     return posts.length;
+
+}
+
+function totalpages(posts){
+
+    var _totalposts = totalposts(posts);
+
+    if (_totalposts % 6 == 0)
+    {
+        return _totalposts/6;
+    }
+    else if (_totalposts % 6 < 0)
+    {
+        return _totalposts/6 + 1;
+    }
+}
+
+function loadpagecontent(currentpagenumber){
+
+    var currentpageposts;
+    var firstpost = (currentpagenumber - 1) *6;
+
+    for()
+    {
+
+    }    
 
 }

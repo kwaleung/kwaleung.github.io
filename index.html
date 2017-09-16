@@ -23,7 +23,9 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- My JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="page/Pager.js"></script>
+    <script src="js/weatherinfo.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -76,7 +78,17 @@
                         <span class="subheading">
                         <p>#include&ltstdweeb&gt</p>
                         <p>using namespace wry;</p>
-						<p>//Place Where I  Post Random Stuff</p>
+                        <p>//Place Where I  Post Random Stuff</p>
+                        <br>
+                        <div id="weatherinfo">
+                            <script>
+                                document.write(_currentcountry + ", "); 
+                                document.write(_currentcity + " ");
+                                document.write(_weatherstatus + " ");
+                                document.write(_currenttemp); 
+                            </script>
+                            &#8451;
+                        </div>
 						</span>
                     </div>
                 </div>
@@ -90,7 +102,12 @@
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" style="background:rgba(255,255,255,0.8);">
                     <div id=post-preview-list></div>
-					<hr>
+                    <hr>
+                    <div>
+                        There are in total 
+                        <script>document.write(totalposts(getPosts()))</script>
+                        posts in the blog.
+                    </div>
 					<!-- Pager -->
 					<ul class="pager">
 						<li class="next">
