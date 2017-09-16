@@ -1,12 +1,14 @@
-//Variables
-var _currentLat;
-var _currentLon;
-var _currentcountry = "country";
-var _currentcity = "city";
-var _weatherstatus = "status";
-var _currenttemp = "temp";
-
 function getCurrentWeather(){
+
+    //Variables
+    var _currentLat;
+    var _currentLon;
+    var _currentcountry = "country";
+    var _currentcity = "city";
+    var _weatherstatus = "status";
+    var _currenttemp = "temp";
+
+    var infoDiv = document.getElementById("weatherinfo");
 
     var locationinfo = new Object();
     var weatherinfo = new Object();
@@ -26,24 +28,52 @@ function getCurrentWeather(){
 
     console.log(weatherinfo);
 
-    _weatherstatus = weatherinfo.weather.main;
+    _weatherstatus = weatherinfo.weather[0].main;
     _currenttemp = weatherinfo.main.temp;
+
+    infoDiv.innerHTML = (_currentcountry + ", " + _currentcity + " || " + _weatherstatus + " " + _currenttemp + "&#8451");
 }
 
 function getCurrentWeatherInfo(Lat, Long){
     var weather = new Object();
-    $.getJSON('https://api.openweathermap.org/data/2.5/weather?lat='+Lat+'&lon='+Long+'&units=metric&APPID=600777002eac9a316a691b9070f89457&callback=', function(data) {
-        console.log(data);
-        weather.load(data);
-    });  
+    // $.getJSON('https://api.openweathermap.org/data/2.5/weather?lat='+Lat+'&lon='+Long+'&units=metric&APPID=600777002eac9a316a691b9070f89457&callback=', function(data) {
+    //     console.log(data);
+    //     weather.load(data);
+    // }); 
+    $.ajax(
+        {
+            type: 'GET',
+            url: 'https://api.openweathermap.org/data/2.5/weather?lat='+Lat+'&lon='+Long+'&units=metric&APPID=600777002eac9a316a691b9070f89457&callback=',
+            dataType: 'json',
+            async: false,
+            success: function(data)
+            {
+                console.log(data);
+                weather = data;
+            }
+        }
+    );
     return weather;
 }
 
 function retrieveIPlocation(){
     var location = new Object();
-    $.getJSON('https://freegeoip.net/json/?callback=', function(data) {
-        console.log(data);
-        location.load(data);
-    });
+    // $.getJSON('https://freegeoip.net/json/?callback=', function(data) {
+    //     console.log(data);
+    //     location.load(data);
+    // });
+    $.ajax(
+        {
+            type: 'GET',
+            url: 'https://freegeoip.net/json/?callback=',
+            dataType: 'json',
+            async: false,
+            success: function(data)
+            {
+                console.log(data);
+                location = data;
+            }
+        }
+    );
     return location;
 }
