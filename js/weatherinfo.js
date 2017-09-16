@@ -6,11 +6,11 @@ var _currentcity = "city";
 var _weatherstatus = "status";
 var _currenttemp = "temp";
 
-var locationinfo = {};
-var weatherinfo = {};
+var locationinfo = new Object();
+var weatherinfo = new Object();
 
-var location = {};
-var weather = {};
+var location = new Object();
+var weather = new Object();
 
 function getCurrentWeather(){
 
