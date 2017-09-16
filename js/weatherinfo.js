@@ -23,13 +23,13 @@ function getCurrentWeather(){
 
 function getCurrentWeatherInfo(Lat, Long){
 
-    $.getJSON('api.openweathermap.org/data/2.5/weather?lat='+Lat+'&lon='+Long+'&units=metric&callback=', function(data) {
+    $.getJSON('https://api.openweathermap.org/data/2.5/weather?lat='+Lat+'&lon='+Long+'&units=metric&callback=', function(data) {
         return data;
     });
 }
 
 function retrieveIPlocation(){
-    $.getJSON('//freegeoip.net/json/?callback=?', function(data) {
+    $.getJSON('https://freegeoip.net/json/?callback=?', function(data) {
         return data;
     });
 }
