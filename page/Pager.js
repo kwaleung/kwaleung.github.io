@@ -75,14 +75,14 @@ function totalpages(posts){
     }
 }
 
-function loadpagecontent(currentpagenumber){
+// function loadpagecontent(currentpagenumber){
 
-    var currentpageposts;
-    var firstpost = (currentpagenumber - 1) *6;
+//     var currentpageposts;
+//     var firstpost = (currentpagenumber - 1) *6;
 
-    for()
-    {
+//     for()
+//     {
 
-    }    
+//     }    
 
-}
+// }
