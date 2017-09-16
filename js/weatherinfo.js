@@ -6,7 +6,7 @@ var _currentcity = "city";
 var _weatherstatus = "status";
 var _currenttemp = "temp";
 
-function getCurrentLocationInfo(){
+function getCurrentWeather(){
 
     var locationinfo = retrieveJSON();
 
