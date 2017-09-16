@@ -6,13 +6,10 @@ var _currentcity = "city";
 var _weatherstatus = "status";
 var _currenttemp = "temp";
 
-var locationinfo = new Object();
-var weatherinfo = new Object();
-
-var location = new Object();
-var weather = new Object();
-
 function getCurrentWeather(){
+
+    var locationinfo = new Object();
+    var weatherinfo = new Object();
 
     locationinfo = retrieveIPlocation();
     
@@ -34,7 +31,7 @@ function getCurrentWeather(){
 }
 
 function getCurrentWeatherInfo(Lat, Long){
-
+    var weather = new Object();
     $.getJSON('https://api.openweathermap.org/data/2.5/weather?lat='+Lat+'&lon='+Long+'&units=metric&APPID=600777002eac9a316a691b9070f89457&callback=', function(data) {
         console.log(data);
         weather.load(data);
@@ -43,7 +40,7 @@ function getCurrentWeatherInfo(Lat, Long){
 }
 
 function retrieveIPlocation(){
-
+    var location = new Object();
     $.getJSON('https://freegeoip.net/json/?callback=', function(data) {
         console.log(data);
         location.load(data);
