@@ -20,7 +20,7 @@ function renderList(posts, postcount){
         postsubtitleDiv.setAttribute("class", "post-subtitle");
         postsubtitleDiv.innerHTML = post.subtitle;
         postdateDiv.setAttribute("class", "post-meta");
-        postdateDiv.innerHTML = post.date;
+        postdateDiv.innerHTML = post.posted_on;
 
         hrefDiv.appendChild(posttitleDiv);
         hrefDiv.appendChild(postsubtitleDiv);
@@ -39,13 +39,19 @@ function getPosts(){
             "href": "../posts/dell_review",
             "title": "Two days into the red GTR and I'm lovin' it.",
             "subtitle": "My first impressions on Dell's budget gaming laptop - Inspiron 15 (7567)",
-            "date": "Posted on April 12,2017", 
+            "posted_on": "Posted on April 12,2017", 
+            "year": 2017,
+            "month": 4,
+            "day": 12,
         },
         {
             "href": "../posts/first_post",
             "title": "First Post",
             "subtitle": "It all begins here.",
-            "date": "Posted on April 2, 2017",
+            "posted_on": "Posted on April 2, 2017",
+            "year": 2017,
+            "month": 4,
+            "day": 2,
         }
     ];
     return postsdb;
