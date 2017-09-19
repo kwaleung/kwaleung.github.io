@@ -12,13 +12,11 @@ function getCurrentWeather(){
 
     var locationinfo = new Object();
     var weatherinfo = new Object();
-    var positioninfo = new Object();
 
-    positioninfo = retrieveGeoLocationHTML5();
     locationinfo = retrieveIPlocation();
 
-    _currentLat = positioninfo["latitude"];
-    _currentLong = positioninfo["longitude"];
+    _currentLat = locationinfo["latitude"];
+    _currentLong = locationinfo["longitude"];
     _currentcountry = locationinfo["country_name"];
     _currentcity = locationinfo["city"];
 
@@ -64,18 +62,3 @@ function retrieveIPlocation(){
     return location;
 }
 
-function retrieveGeoLocationHTML5(){
-
-    if (navigator.geolocation) {
-        var position = navigator.geolocation.getCurrentPosition(returnobj);
-        return position;
-    } else {
-        console.log("Geolocation is not supported by this browser.");
-    }
-
-}
-
-function returnobj(position){
-    console.log(position);
-    return position;
-}
