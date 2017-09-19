@@ -25,7 +25,18 @@ function getCurrentWeather(){
     _weatherstatus = weatherinfo.weather[0].description;
     _currenttemp = weatherinfo.main.temp;
 
-    infoDiv.innerHTML = (_currentcountry + ", " + _currentcity + " || " + _weatherstatus + " " + _currenttemp + "&#8451");
+    var displaystring;
+
+    if (_currentcity == "")
+    {
+        displaystring = (_currentcountry + " || " + _weatherstatus + " " + _currenttemp + "&#8451");
+    }
+    else
+    {
+        displaystring = (_currentcountry + ", " + _currentcity + " || " + _weatherstatus + " " + _currenttemp + "&#8451");
+    }
+
+    infoDiv.innerHTML = displaystring;
 }
 
 function getCurrentWeatherInfo(Lat, Long){
