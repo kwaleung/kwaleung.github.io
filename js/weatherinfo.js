@@ -12,17 +12,19 @@ function getCurrentWeather(){
 
     var locationinfo = new Object();
     var weatherinfo = new Object();
+    var positioninfo = new Object();
 
     locationinfo = retrieveIPlocation();
+    poditioninfo = retrieveGeoLocationHTML5();
 
-    _currentLat = locationinfo["latitude"];
-    _currentLong = locationinfo["longitude"];
+    _currentLat = positioninfo["latitude"];
+    _currentLong = positioninfo["longitude"];
     _currentcountry = locationinfo["country_name"];
     _currentcity = locationinfo["city"];
 
     weatherinfo = getCurrentWeatherInfo(_currentLat, _currentLong);
 
-    _weatherstatus = weatherinfo.weather[0].main;
+    _weatherstatus = weatherinfo.weather[0].description;
     _currenttemp = weatherinfo.main.temp;
 
     infoDiv.innerHTML = (_currentcountry + ", " + _currentcity + " || " + _weatherstatus + " " + _currenttemp + "&#8451");
@@ -33,7 +35,7 @@ function getCurrentWeatherInfo(Lat, Long){
     $.ajax(
         {
             type: 'GET',
-            url: 'https://api.openweathermap.org/data/2.5/weather?lat='+Lat+'&lon='+Long+'&units=metric&APPID=600777002eac9a316a691b9070f89457&callback=',
+            url: 'https://api.openweathermap.org/data/2.5/weather?lat='+Lat+'&lon='+Long+'&units=metric&lang=zh_cn&APPID=600777002eac9a316a691b9070f89457&callback=',
             dataType: 'json',
             async: false,
             success: function(data)
@@ -60,4 +62,15 @@ function retrieveIPlocation(){
         }
     );
     return location;
+}
+
+function retrieveGeoLocationHTML5(){
+
+    if (navigator.geolocation) {
+        var position = navigator.geolocation.getCurrentPosition();
+        return position;
+    } else {
+        console.log("Geolocation is not supported by this browser.");
+    }
+
 }
