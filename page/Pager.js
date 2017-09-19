@@ -36,12 +36,6 @@ function renderList(posts, postcount){
 function getPosts(){
     var postsdb = [
         {
-            "href": "#",
-            "title": "This is a fake post :0)",
-            "subtitle": ":0)",
-            "date": "Nebula", 
-        },
-        {
             "href": "../posts/dell_review",
             "title": "Two days into the red GTR and I'm lovin' it.",
             "subtitle": "My first impressions on Dell's budget gaming laptop - Inspiron 15 (7567)",
