@@ -14,8 +14,8 @@ function getCurrentWeather(){
     var weatherinfo = new Object();
     var positioninfo = new Object();
 
+    positioninfo = retrieveGeoLocationHTML5();
     locationinfo = retrieveIPlocation();
-    poditioninfo = retrieveGeoLocationHTML5();
 
     _currentLat = positioninfo["latitude"];
     _currentLong = positioninfo["longitude"];
