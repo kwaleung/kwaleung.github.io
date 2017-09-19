@@ -67,10 +67,15 @@ function retrieveIPlocation(){
 function retrieveGeoLocationHTML5(){
 
     if (navigator.geolocation) {
-        var position = navigator.geolocation.getCurrentPosition();
+        var position = navigator.geolocation.getCurrentPosition(returnobj);
         return position;
     } else {
         console.log("Geolocation is not supported by this browser.");
     }
 
+}
+
+function returnobj(position){
+    console.log(position);
+    return position;
 }
